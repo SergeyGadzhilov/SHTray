@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include <windows.h>
-#include "PopupMenu.h"
+#include "SHPopupMenu.h"
 
 #define THIS_CLASSNAME "SH Tray"
 #define ID_ABOUT       0
@@ -26,7 +26,7 @@ static BOOL g_bModalState = FALSE; //Is messagebox shown
 void ShowPopupMenu(HWND hWnd)
 {
     if (!g_bModalState) {
-        PopupMenu menu(hWnd);
+        SHPopupMenu menu(hWnd);
         menu.addItem("About...");
         menu.addItem("Exit");
         menu.show();
